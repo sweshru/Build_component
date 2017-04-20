@@ -1,0 +1,41 @@
+<div class="row" style="padding-left:15px;padding-right: 15px;">
+    <form novalidate>
+        <div class="row gridrow">
+            <input type="text" class="form-control input-sm inputstyles" id="fname" required>
+            <label for="fname">First Name</label>
+        </div>
+        <div class="row gridrow">
+            <a ui-sref="eventreg"><button class="btn btn-info btn-sm">Event Registration</button></a>
+        </div>
+		<div id="tablediv">
+			<table class="table table-striped table-hover table-bordered">
+				<thead>
+					<tr>
+						<th> EventName</th>
+						<th>EventDescription</th>
+						<th>IdEvent</th>
+						<th>Country</th>
+						<th><button class="btn btn-primary btn-xs" ng-click="addEvent()"><i class="fa fa-plus-circle"></i></button></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="xv in datalist" ng-mouseover="showedit($index)">
+						<td>{{xv.EventName}}</td>
+						<td>{{xv.Description}}</td>
+						<td>{{xv.IdEvent}}</td>
+						<td>{{xv.Country}}</td>
+						<td class="fa fa-pencil" ng-show="showeditflag==$index" ng-click="showeditmodal(xv,$index)"></td>
+						<td class="fa fa-trash-o" ng-show="showeditflag==$index" ng-click="showdeletemodal(xv,$index)"></td>
+					</tr>
+					<tr ng-if="dataadd">
+					<td><input type="text" ng-model="saveobjectglobal.eventname"></td>
+					<td><input type="text" ng-model="saveobjectglobal.description"></td>
+					<td><input type="number" ng-model="saveobjectglobal.idEvent"></td>
+					<td><input type="text" ng-model="saveobjectglobal.country"></td>
+					<td><button class="btn btn-success btn-xs" ng-click="saveevent(saveobjectglobal)"><i class="fa fa-check-circle"></i></button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+    </form>
+</div>

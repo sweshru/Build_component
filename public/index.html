@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="buildapp">
+<head>
+    <title>Buildcomponents</title>
+    <script type="text/javascript" src="jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="angular/angular.js"></script>
+    <script type="text/javascript" src="angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="angular-nvd3/node_modules/d3/d3.js"></script>
+    <script src="angular-nvd3/node_modules/nvd3/build/nv.d3.js"></script> <!-- or use another assembly -->
+    <script src="angular-nvd3/dist/angular-nvd3.js"></script>
+    <link rel="stylesheet" href="angular-nvd3/node_modules/nvd3/build/nv.d3.css">
+    <link rel="stylesheet" href="angular-ui-bootstrap/dist/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <script type="text/javascript" src="bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script type="text/javascript" src="angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+</head>
+<body ng-controller = "builappcontroller">
+<div class="" style="padding:0px;margin:0px;">
+    <nav class="navbar navbar-inverse">
+        <div class="row">
+            <div class="col-xs-2 col-sm-2 col-sd-2 col-lg-2">
+                <i class="glyphicon glyphicon-menu-hamburger rotate" style="color:white;padding-top: 15px;padding-left:15px;" ng-click="openhiddendiv()" ng-class="{'down':whenshow==true}"></i>
+            </div>
+        </div>
+    </nav>
+<!--<div class="row checkelement"  ng-class="{'fadeindiv':whenshow==true}">-->
+    <div class="row subnav" >
+        <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2 checkelements" ng-class="{'fadeindivs':whenshow==true}">
+            <ul class=""  style="padding:0px;margin:0px;">
+                <li class="liclass">
+                    <a ui-sref="/"><i class="glyphicon glyphicon-home"></i> Home</a>
+                </li>
+                <li class="liclass">
+                    <a ui-sref="grid"><i class="glyphicon glyphicon-th-list"></i> Grid</a>
+                </li>
+                <li class="liclass">
+                    <a ui-sref="multi"><i class="glyphicon glyphicon-signal"></i> Multiview</a>
+                </li>
+                <li class="liclass">
+                   <a ui-sref="dragdrop"><i class="glyphicon glyphicon-stats"></i> Charts/Drag&Drop</a>
+                </li>
+                <li class="liclass">
+                    <a ui-sref="tabs"><i class="glyphicon glyphicon-tasks"></i> Tabs</a>
+                </li>
+                <li class="liclass">
+                    <a ui-sref="caldiv"><i class="glyphicon glyphicon-calendar"></i> Calendar</a>
+                </li>
+                <li class="liclass">
+                    <a ui-sref="flipdiv"><i class="glyphicon glyphicon-flash"></i> FlipableDiv</a>
+                </li>
+				<li class="liclass">
+                    <a ui-sref="eventreg"><i class="glyphicon glyphicon-flash"></i> EventLIstings</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="margin:0px;padding:0px;width:20px;"><i ng-if="!whenshow" class="glyphicon glyphicon-chevron-left" ng-click="openhiddendiv()"></i>
+            <i ng-if="whenshow" class="glyphicon glyphicon-chevron-right" ng-click="openhiddendiv()"></i></div>
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 uipanel" ng-class="{'fadeindivspanel':whenshow==true}">
+            <div class="panel panel-success" style="height:500px;">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        GRIDBUILD
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div ui-view=""></div>
+
+                </div>
+            </div>
+        </div>
+</div>
+
+    <footer>@angular-build_components</footer>
+</div>
+</body>
+</html>

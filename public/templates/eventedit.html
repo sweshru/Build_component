@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <label>Edit Event <i class="fa fa-pencil fa-2x" style="color:#b9def0;"></i></label>
+</div>
+<div class="modal-body"  style="height:150px;overflow-y:auto;overflow-x:hidden;margin:15px;padding-right:25px;" id="style-3">
+<form>
+    <div class="row" style="padding-bottom: 5px;">
+        <input type="text" class="form-control input-sm" ng-model="editdetails.eventname" placeholder="EventName">
+    </div>
+   
+  
+    <div clas="row" style="padding-bottom: 5px;margin-left: -15px;margin-right:-15px;">
+        <input type="text" class="form-control input-sm" ng-model="editdetails.descp" placeholder="Description">
+    </div>
+  
+    <div class="row" style="padding-bottom: 5px;">
+        <input type="number" class="form-control input-sm"  readonly ng-model="editdetails.idevent" placeholder="IdEvent">
+    </div>
+    <div class="row" style="padding-bottom: 5px;">
+        <input type="text" class="form-control input-sm"  ng-model="editdetails.cntry" placeholder="Country">
+    </div>
+
+</form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default btn-sm" type="button" ng-click="canceledit()">Cancel</button>
+    <button class="btn btn-primary btn-sm" type="button" ng-click="updateedit()">ok</button>
+
+</div>

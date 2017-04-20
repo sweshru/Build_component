@@ -1,0 +1,22 @@
+{
+  "name": "Build-components",
+  "version": "0.0.0",
+  "description": "Simple todo application.",
+  "main": "buidcomserver.js",
+  "author": "Swetha",
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.13.4",
+    "method-override": "^2.1.3",
+    "mongoose": "^4.4.12",
+    "morgan": "^1.1.1",
+    "angular": "~1.4.8",
+    "bootstrap": "~3.3.6"
+  },
+  "scripts": {
+    "start": "node buildcomserver.js"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "license": "ISC"
+}

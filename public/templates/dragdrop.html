@@ -1,0 +1,36 @@
+<div class="row" style="padding-left:15px;padding-right: 15px;">
+   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" >
+       <div class="panel panel-primary">
+           <div class="panel-heading">
+               <div class="panel-title">
+                   Drag Items From List
+               </div>
+           </div>
+           <div class="panel panel-body"  style="height:350px;overflow-y:auto;overflow-x:hidden">
+               <div ng-repeat="item in items">
+                   <!-- usage of the Draggable directive -->
+                   <div dd-draggable="true" class="item liclass" itemid="{{item.id}}"><i class="fa fa-{{item.clname}}"></i> {{item.name}}</div>
+               </div>
+           </div>
+       </div>
+   </div>
+    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" >
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="panel-title">
+                    Drop Items From List
+                </div>
+            </div>
+            <div class="panel panel-body" style="height:350px;">
+                <div id="dropbox" dd-drop-target="true" style="height:350px;">
+                    <div ng-repeat="item in dropped">
+                        <div class="item">{{item.id}}. {{item.name}}</div>
+                    </div>
+                    <nvd3 options="options" data="data"></nvd3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

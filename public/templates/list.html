@@ -1,0 +1,64 @@
+ <div class="row  input-group" style="padding:8px;border:1px solid cornflowerblue;border-bottom:0;box-shadow: 4px 4px 1px 1px #888888;" ng-show="whensearch">
+            <span class="input-group-addon" style="border:0;background-color: transparent;"><i class="glyphicon glyphicon-arrow-left" data-ng-click="goback()"></i></span>
+            <input type="text" class="form-control input-sm" ng-model="filtervalue" placeholder="Search Here..." style="border:0;" id="serchcontact">
+
+</div>
+<div class="row" style="padding:8px;border:1px solid cornflowerblue;border-bottom:0;background-color: seagreen" ng-hide="whensearch">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+            <label style="color:white;">Grid&nbsp;Contacts</label>
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1  " style="">
+            <button class="btn btn-default btn-xs pull-right" data-ng-click="serchbar()" style="border:0;color:white;padding:0;background-color: seagreen"><i class="glyphicon glyphicon-search" ></i></button>
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 " style="">
+            <button class="btn btn-default btn-xs pull-right" style="border:0;color:white;padding:0;background-color: seagreen"><i class="fa fa-user-plus" data-ng-click="addcontact()"></i></button>
+        </div>
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pull-right" style="">
+            <button class="btn btn-default btn-xs pull-right" style="border:0;color:white;padding:0;background-color: seagreen"><i class="glyphicon glyphicon-option-vertical" data-ng-click="showpopup()"></i></button>
+        </div>
+
+
+    </div>
+
+</div>
+    <div class="row" style="border:1px solid cornflowerblue;height:390px;overflow-y:auto;overflow-x:hidden;border-top:0;" id="style-3">
+        <div custom-tabs="" class="panel-body">
+            <div class="row">
+                <ul class="nav nav-tabs" id="makeclassactive">
+                    <li tab-head="" id="first" class="tabclass active">First</li>
+                    <li tab-head="" id="second" class="tabclass">Second</li>
+                    <li tab-head="" id="third" class="tabclass">Third</li>
+                </ul>
+            </div>
+            <div class="row tab-content" id="tabbodyactive">
+                <div tab-body="" id="first" class="tab-pane show">First</div>
+                <div tab-body="" id="second" class="tab-pane">Second</div>
+                <div tab-body="" id="third" class="tab-pane">
+                    <ul class="list-inline" ng-repeat="x in datalist | filter:filtervalue" >
+                        <li style="border-bottom: 1px solid black;padding-bottom: 5px;">
+                            <div class="row" style="height:20px;padding:8px;">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-left" style="width:340px;">
+                                    <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2 pull-left" style="padding-left:0px;">
+                                        <button class="btn btn-default" style="background-color: darkseagreen;border-radius:40px;"> <i class="fa fa-user-circle" data-ng-click="showdetail(x.name)"></i></button>
+                                    </div>
+                                    <div class="col-xs-8 col-md-8 col-lg-8 col-sm-8" >
+                                        {{x.name}}
+                                    </div>
+                                    <div class="col-xs-2 col-lg-2 col-md-2 col-sm-2 pull-right">
+                                        <button class="btn btn-default btn-xs pull-right" style="border:none;"> <i class="glyphicon glyphicon-option-vertical" data-ng-click="deletetodo(x.name)"></i></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>

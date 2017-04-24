@@ -111,8 +111,8 @@ var tmpdata = JSON.stringify($scope.editdetails);
 			dataType:'json',
 			data:tmpdata,
         	headers: {'Content-Type': 'application/json'}
+
         }).success(function (data) {
-			debugger;
 $scope.datalist =data;
         	console.log(data);		  
                 
@@ -141,10 +141,12 @@ $scope.datalist =data;
 		console.log($scope.saveobjectglobal);
 		$http({
         	method: 'POST',
+
         	url: '/Exerciseproject/CreatePackage',
 			dataType:'json',
 			data:tmpdata,
         	headers: {'Content-Type': 'application/json'}
+
         }).success(function (data) {
 
         	console.log(data)	;

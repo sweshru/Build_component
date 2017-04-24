@@ -29,28 +29,22 @@ exports.getEvents = function(req,resp){
     }).end();
 };
 exports.updateEvents = function(req,resp){
-	console.log("update data****************");
-	console.log(req.body);
-		
-		var datasend;
-		for(var i in req.body){
-			datasend = i;
-			  console.log("****************PARSED***************");
-			  console.log(JSON.stringify(datasend));
-			}
-		
-		var datap = querystring.stringify(datasend);
+	
+		var datasend = req.body;
+		datasend = JSON.stringify(datasend);
+		console.log(datasend);
+
+		var datap = JSON.stringify(datasend);
+		console.log(datasend);
   var reqq =  http.request({
 	   host: 'localhost',
 	   port: '8006',
-	   path : "/Exerciseproject/Testpackage",
-       method : "POST",
-       headers : { "Content-Type" : "application/x-www-form-urlencoded"},
-       body:datap
-   }, function (err,res,body) {
-        res.setEncoding('utf8');
+	   path : req.path,
+       method : req.method,
+       headers : { 'Content-Type' : 'application/json'}
+   }, function (res) {
+        //res.setEncoding('utf8');
 		console.log("*******NODE CONNECT NDST form response***********");
-		
         res.on('data', function (data) {
 			console.log("*******NODE CONNECT NDST***********");
 			var b = new Buffer(data);
@@ -67,13 +61,23 @@ exports.updateEvents = function(req,resp){
 		
 		
  
-    }).end();
+    });
+  reqq.write(datasend);
+  reqq.end();
 	
 };
 exports.createEvents = function(req,resp){
 		extServerOptions.path = req.path;
-	var datas ;
-   http.request(extServerOptions, function (res) {
+	var datas;
+	var reqdata = req.body;
+	reqdata = JSON.stringify(reqdata);
+  var createreq =  http.request({
+	   host: 'localhost',
+	   port: '8006',
+	   path : req.path,
+       method : req.method,
+       headers : { 'Content-Type' : 'application/json'}
+   }, function (res) {
         res.setEncoding('utf8');
 		console.log("*******NODE CONNECT NDST form response***********");
 		
@@ -87,12 +91,22 @@ exports.createEvents = function(req,resp){
         });
 		
  
-    }).end();
+    });
+  createreq.write(reqdata);
+  createreq.end();
 };
 exports.deleteEvents = function(req,resp){
 		extServerOptions.path = req.path;
 	var datas ;
-   http.request(extServerOptions, function (res) {
+	var deletereq = req.body;
+	deletereq = JSON.stringify(deletereq);
+  var deleterequest =  http.request({
+	   host: 'localhost',
+	   port: '8006',
+	   path : req.path,
+       method : req.method,
+       headers : { 'Content-Type' : 'application/json'}
+   }, function (res) {
         res.setEncoding('utf8');
 		console.log("*******NODE CONNECT NDST form response***********");
 		
@@ -106,5 +120,7 @@ exports.deleteEvents = function(req,resp){
         });
 		
  
-    }).end();
+    });
+  deleterequest.write(deletereq);
+  deleterequest.end();
 };

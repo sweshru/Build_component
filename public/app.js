@@ -85,10 +85,10 @@ var tmpdata = JSON.stringify($scope.deletedata);
       
 			  $http({
         	method: 'POST',
-        	url: 'http://localhost:8006/Exerciseproject/DeletePackage',
+        	url: '/Exerciseproject/DeletePackage',
 			dataType:'json',
 			data:tmpdata,
-        	headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+        	headers: {'Content-Type': 'application/json'}
         }).success(function (data) {
 
         	console.log(data);	
@@ -109,10 +109,10 @@ var tmpdata = JSON.stringify($scope.editdetails);
         	method: 'POST',
         	url: '/Exerciseproject/Testpackage',
 			dataType:'json',
-			data:$scope.editdetails,
-        	headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+			data:tmpdata,
+        	headers: {'Content-Type': 'application/json'}
+
         }).success(function (data) {
-			debugger;
 $scope.datalist =data;
         	console.log(data);		  
                 
@@ -141,10 +141,12 @@ $scope.datalist =data;
 		console.log($scope.saveobjectglobal);
 		$http({
         	method: 'POST',
-        	url: 'http://localhost:8006/Exerciseproject/CreatePackage',
+
+        	url: '/Exerciseproject/CreatePackage',
 			dataType:'json',
 			data:tmpdata,
-        	headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
+        	headers: {'Content-Type': 'application/json'}
+
         }).success(function (data) {
 
         	console.log(data)	;

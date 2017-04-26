@@ -287,7 +287,7 @@ transform: rotateY(0);
     box-shadow: none;
     outline:none;
 }
-label{
+/* label{
     position:absolute;
     top:60px;
     transition:transform 1s cubic-bezier(.25,.8,.25,1);
@@ -299,7 +299,7 @@ label{
     left:35px;
     font-size:10px;
     color:blue;
-}
+} */
 .calheader{
     background-color: lightseagreen;
     color:white;
@@ -348,6 +348,22 @@ label{
 	border-top-right-radius:4px;
 	border-bottom-left-radius:0;
 	border-right-width: 1px;
+}
+input[type="file"] {
+    display: none;
+} 
+.custom-file-upload {
+    display: inline-block;
+    padding: 0px 12px;
+    margin-bottom:0px;
+    cursor: pointer;
+    color:#005cb9;
+    font-size:14px;
+    font-weight:bold;
+}
+button:focus { 
+    border: none;
+    outline:none;
 }
 
 /*.inputstyles:not(:focus):valid ~ label{*/
